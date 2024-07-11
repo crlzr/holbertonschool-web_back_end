@@ -1,17 +1,8 @@
 // Currency class definition
 export default class Currency {
-  constructor(name, code) {
-    this._name = name;
+  constructor(code, name) {
     this._code = code;
-  }
-
-  // Getter and Setter for name
-  get name() {
-    return this._name;
-  }
-
-  set name(newName) {
-    this._name = newName;
+    this._name = name;
   }
 
   // Getter and Setter for code
@@ -23,8 +14,17 @@ export default class Currency {
     this._code = newCode;
   }
 
+  // Getter and Setter for name
+  get name() {
+    return this._name;
+  }
+
+  set name(newName) {
+    this._name = newName;
+  }
+
   // Method to display full currency information
   displayFullCurrency() {
-    return `${this._code} (${this._name})`;
+    return `${this._name} (${this._code})`;
   }
 }
