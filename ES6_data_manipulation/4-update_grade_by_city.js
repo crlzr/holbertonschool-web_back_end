@@ -2,10 +2,10 @@
 
 export default function updateStudentGradeByCity(array, city, newGrades) {
   // filter students by city
-  const filteredStudents = array.filter(({location}) => location === city);
+  const filteredStudents = array.filter(({ location }) => location === city);
   // Iterate (map) over the filtered students to update their grades
-  const updatedStudents = filteredStudents.map(student => {
-    const studentGrades = newGrades.filter((grade) => (grade.studentID === student.id));
+  const updatedStudents = filteredStudents.map((student) => {
+    const studentGrades = newGrades.filter((grade) => grade.studentId === student.id);
     const newStudent = student;
     // check if student has a grade, if not it should be N/A
     if (studentGrades.length > 0) {
@@ -15,6 +15,5 @@ export default function updateStudentGradeByCity(array, city, newGrades) {
     }
     return newStudent;
   });
-
   return updatedStudents;
 }
