@@ -2,12 +2,11 @@
 updated map for all items with initial quantity at 1. */
 
 export default function updateUniqueItems(map) {
+  if (!(map instanceof Map)) {
+    throw Error('Cannot Process');
+  }
   // iterate over key-value pairs
   for (const [key, value] of map) {
-    // check if it's a map
-    if (!(map instanceof Map)) {
-      throw Error('Cannot Process');
-    }
     // check if value is 1
     if (value === 1) {
       // update value to 100
