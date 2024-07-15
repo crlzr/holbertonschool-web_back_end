@@ -3,7 +3,7 @@ updated map for all items with initial quantity at 1. */
 
 export default function updateUniqueItems(map) {
   if (!(map instanceof Map)) {
-    throw new Error('Cannot Process');
+    throw new Error('Cannot process');
   }
   // iterate over key-value pairs
   for (const [key, value] of map) {
