@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 '''
 function that takes a string k and an int
 OR float v and returns a tuple
