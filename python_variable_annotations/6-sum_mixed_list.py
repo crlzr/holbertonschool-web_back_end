@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 ''' function that takes a list mxd_lst of ints and floats and returns
 the sum as float '''
 from typing import Union, List
