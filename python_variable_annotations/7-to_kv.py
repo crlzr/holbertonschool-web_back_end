@@ -1,4 +1,7 @@
-''' function that takes a string k and an int OR float v and returns a tuple '''
+'''
+function that takes a string k and an int
+OR float v and returns a tuple
+'''
 
 from typing import Union, List, Tuple
 
