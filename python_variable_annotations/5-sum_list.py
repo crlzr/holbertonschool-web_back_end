@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 ''' type-annotated function with a list of floats as
 args and returns the sum as float
 '''
