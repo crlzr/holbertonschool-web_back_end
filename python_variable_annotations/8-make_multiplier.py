@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 '''
 module that takes a float as arg and returns a function
 that multiplies a float by multiplier
