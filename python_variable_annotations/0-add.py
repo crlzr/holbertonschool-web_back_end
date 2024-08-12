@@ -1,5 +1,7 @@
+''' This module adds two floats and returns their sum as a float '''
 
-def add(a:float, b:float) -> float:
+
+def add(a: float, b: float) -> float:
     '''
     Type-annotated function 'add'
     Arguments: a (float), b(float)
