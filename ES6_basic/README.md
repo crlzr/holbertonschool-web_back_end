@@ -1,4 +1,4 @@
-# ES6 Bascis
+# ES6 Basics
 
 # Resources
 
