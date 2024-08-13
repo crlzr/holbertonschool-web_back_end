@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+'''
+A module that takes two integers and returns a list of all delays
+'''
 from random import random
 import asyncio
 from typing import List
