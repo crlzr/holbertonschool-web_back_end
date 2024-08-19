@@ -57,7 +57,7 @@ class Server:
 
         # number of the previous page, None if no previous page
         prev_page = None
-        if len(self.dataset()) > 1:
+        if page > 1:
             prev_page = page - 1
 
         # total_pages: the total number of pages in the dataset as an integer
