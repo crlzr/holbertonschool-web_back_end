@@ -52,7 +52,7 @@ class Server:
 
         # next_page: number of the next page, None if no next page
         next_page = None
-        if len(self.dataset()) < end_index:
+        if end_index < len(self.dataset()):
             next_page = page + 1
 
         # number of the previous page, None if no previous page
