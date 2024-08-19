@@ -1,8 +1,8 @@
 # Python - Async Comprehension
 
 # Resources
--[PEP 530](https://peps.python.org/pep-0530/)
--[What's new in Python](https://www.blog.pythonlibrary.org/2017/02/14/whats-new-in-python-asynchronous-comprehensions-generators/)
+- [PEP 530](https://peps.python.org/pep-0530/)
+- [What's new in Python](https://www.blog.pythonlibrary.org/2017/02/14/whats-new-in-python-asynchronous-comprehensions-generators/)
 
 
 # Requirements
