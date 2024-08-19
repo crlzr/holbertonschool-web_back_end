@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
+'''module that will execute async_comprehension 4 times '''
 import asyncio
 import time
-
-'''module that will execute async_comprehension 4 times '''
 
 async_comprehension = __import__('1-async_comprehension').async_comprehension
 
 
-async def measure_runtime():
+async def measure_runtime() -> float:
     '''
     function: will execute async_c 4 times and will measure runtime
     args: non
