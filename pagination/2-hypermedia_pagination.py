@@ -3,7 +3,6 @@
 import csv
 import math
 from typing import List, Dict
-
 index_range = __import__('0-simple_helper_function').index_range
 
 
@@ -44,34 +43,33 @@ class Server:
             return data[start_index:end_index]
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
-        '''
-        Returns a dictionary of hypermedia key-value pairs
-        '''
-        # The length of the returned dataset page
-        start_index, end_index = index_range(page, page_size)
+        ''' Return dict with key-value pairs '''
 
-        # next_page: number of the next page, None if no next page
-        next_page = None
-        if end_index < len(self.dataset()):
-            next_page = page + 1
+        # Total pages
+        with open(self.DATA_FILE) as f:
+            reader = csv.reader(f)
+            rows = list(reader)
 
-        # number of the previous page, None if no previous page
-        prev_page = None
-        if page > 1:
-            prev_page = page - 1
+        total_rows = len(rows) - 1
+        total_pages = math.ceil(total_rows / page_size)
 
-        # total_pages: the total number of pages in the dataset as an integer
-        total_pages = int(len(self.dataset()) / 10)
-        if (page_size > 0):
-            total_pages = int(len(self.dataset()) / page_size)
+        # next page
+        next_page = page + 1
+        if (next_page > total_pages):
+            next_page = None
+
+        # previous page
+        previous_page = page - 1
+        if previous_page <= 0:
+            previous_page = None
 
         hyper_dict = {
-            "page_size": len(self.get_page(page, page_size)),
-            "page": page,
-            "data": self.get_page(page, page_size),
-            "next_page": next_page,
-            "prev_page": prev_page,
-            "total_pages": total_pages
+            'page_size': page_size,
+            'page': page,
+            'data': self.get_page(page, page_size),
+            'next_page': next_page,
+            'prev_page': previous_page,
+            'total_pages': total_pages
         }
 
         return hyper_dict
