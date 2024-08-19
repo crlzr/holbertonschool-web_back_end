@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from random import random
 from typing import Generator
 import asyncio
