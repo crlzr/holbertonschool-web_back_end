@@ -4,5 +4,5 @@ from pymongo import MongoClient
 
 def schools_by_topic(mongo_collection, topic):
     ''' returns the list of schools having a specific topic '''
-    myresults = list(mongo_collection.find({"topic": topic}))
-    return myresults
+    results = list(mongo_collection.find({"topics": topic}))
+    return results
