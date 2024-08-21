@@ -21,10 +21,14 @@ if __name__ == "__main__":
     methods["PUT"] = collection.count_documents({"method": "PUT"})
     methods["PATCH"] = collection.count_documents({"method": "PATCH"})
     methods["DELETE"] = collection.count_documents({"method": "DELETE"})
+    status = collection.count_documents({"method": "GET", "path": "/status"})
+
+
 
 
     print("{} logs".format(all_docs))
     print("Methods:")
     for k, v in methods.items():
         print("\tmethod {}: {}".format(k, v))
+    print("{} status check".format(status))
 
