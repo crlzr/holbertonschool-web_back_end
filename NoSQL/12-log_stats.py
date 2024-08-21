@@ -2,9 +2,10 @@
 ''' Module that provides some stats about Nginx logs stored in MongoDB '''
 from pymongo import MongoClient
 
-client = MongoClient("mongodb://localhost:27017/")
-# logs = database, nginx = collection
-collection = client.logs.nginx
+if __name__ == "__main__":
+    client = MongoClient("mongodb://localhost:27017/")
+    # logs = database, nginx = collection
+    collection = client.logs.nginx
 
 methods = {
     "GET": 0,
