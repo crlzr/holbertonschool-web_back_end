@@ -23,5 +23,5 @@ methods["DELETE"] = collection.count_documents({"method": "DELETE"})
 print("{} logs".format(all_docs))
 print("Methods:")
 for k, v in methods.items():
-    print("method {}: {}".format(k, v))
+    print("\tmethod {}: {}".format(k, v))
 
