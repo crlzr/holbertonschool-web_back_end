@@ -4,7 +4,7 @@ const app = http.createServer((req, res) => {
   res.end('Hello Holberton School!!');
 });
 
-app.listen(1245, () => {
-  const { address, port } = http.address();
+server.listen(1245, () => {
+  const { address, port } = app.address();
   console.log(`Server is listening on: http://${address}:${port}`);
 })
