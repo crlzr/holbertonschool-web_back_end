@@ -5,6 +5,6 @@ const app = http.createServer((req, res) => {
 });
 
 app.listen(1245, () => {
-  const { address, port } = app.address();
+  const { address, port } = http.address();
   console.log(`Server is listening on: http://${address}:${port}`);
 })
