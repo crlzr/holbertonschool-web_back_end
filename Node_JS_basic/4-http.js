@@ -1,15 +1,15 @@
 const http = require('http');
 
-// Create an HTTP server and handle requests
-const app = http.createServer((req, res) => {
-  res.statusCode = 200; // Set the status code to 200 (OK)
-  res.setHeader('Content-Type', 'text/plain'); // Set the content type to plain text
-  res.end('Hello, Holberton School!!\n'); // Send a response
-});
+const host = 'localhost';
+const port = 1245;
 
-// Start the server and listen on port 1245
-app.listen(1245, () => {
-  // Retrieve the server address and log it
-  const addressInfo = app.address();
-  console.log(`Server is listening on: http://localhost:${addressInfo.port}`);
-});
+function requestListener(req, res) {
+    res.writeHead(200);
+    res.end("Hello Holberton School!");
+};
+
+const app = http.createServer(requestListener);
+app.listen(port, host, () => {
+})
+
+module.exports = requestListener;
