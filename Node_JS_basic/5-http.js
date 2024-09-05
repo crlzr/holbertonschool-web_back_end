@@ -1,5 +1,5 @@
 const http = require('http');
-const fs = require('fs').promises;
+const fs = require('node:fs/promises');
 
 const host = 'localhost';
 const port = 1245;
@@ -43,6 +43,10 @@ async function requestListener(req, res) {
       } catch (err) {
         res.end('Cannot load the database');
       }
+      break;
+    default:
+      res.writeHead(404);
+      res.end('Not Found');
       break;
   }
 }
