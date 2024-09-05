@@ -38,7 +38,7 @@ app.get('/students', async (req, res) => {
     res.write(`Number of students in CS: ${studentsCS.length}. List: ${studentsCS.join(', ')}\n`);
     res.end(`Number of students in SWE: ${studentsSWE.length}. List: ${studentsSWE.join(', ')}`);
   } catch (err) {
-    throw new Error('Cannot load the database');
+    res.end('Cannot load the database');
   }
 });
 app.listen(PORT);
