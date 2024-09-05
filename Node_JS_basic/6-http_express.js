@@ -7,4 +7,5 @@ app.get('/', (req, res) => {
   res.status(200);
   res.send('Hello Holberton School!');
 });
-app.listen(PORT, () => {});
+app.listen(PORT);
+module.exports = app;
