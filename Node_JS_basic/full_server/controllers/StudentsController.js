@@ -2,13 +2,14 @@
 const readDatabase = require("../utils");
 
 // refer to database
-const database = process.argv[2];
+// const database = process.argv[2];
+const databasePath = './database.csv';
 
 export default class StudentsController {
   static async getAllStudents(req, res) {
     try {
       // Call the readDatabase function with the database path
-      const students = await readDatabase(database);
+      const students = await readDatabase(databasePath);
 
       const { CS, SWE } = students;
 
