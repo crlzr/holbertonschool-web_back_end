@@ -1,4 +1,3 @@
-const { rawListeners } = require("../server");
 const readDatabase = require("../utils");
 
 // refer to database
