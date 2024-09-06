@@ -4,11 +4,13 @@ const readDatabase = require("../utils");
 // refer to database
 const database = process.argv[2];
 
-class StudentsController {
-  static getAllStudents(req, res) {
+export default class StudentsController {
+  static async getAllStudents(req, res) {
     try {
-      // Call the readDatabase function
-      readDatabase();
+      // Call the readDatabase function with the database path
+      const students = await readDatabase(database);
+
+      const { CS, SWE } = students;
 
       res.status(200);
       res.write('This is the list of our students\n');
@@ -21,20 +23,20 @@ class StudentsController {
     }
   }
 
-  static getAllStudentsbyMajor(req, res) {
-    if (req.params.major == 'CS') {
-      res.status(200);
-      readDatabase();
-      res.send(`List: ${CS.join(', ')}\n`);
-    } else if (req.params.major == 'SWE') {
-      res.send(`List: ${SWE.join(', ')}\n`);
-    } else {
-      res.status(500).
-      res.end('Major parameter must be CS or SWE');
-    }
+  static async getAllStudentsbyMajor(req, res) {
+    try {
+      const students = await readDatabase(database);
+      const { CS, SWE } = students;
+
+      if (req.params.major === 'CS') {
+        res.status(200).send(`List: ${CS.join(', ')}\n`);
+      } else if (req.params.major === 'SWE') {
+        res.status(200).send(`List: ${SWE.join(', ')}\n`);
+      } else {
+        res.status(400).end('Major parameter must be CS or SWE');
+      }
+    } catch (err) {
+      res.status(500).end('Cannot load the database');
     }
   }
-
-module.exports = StudentsController;
-
-
+}
