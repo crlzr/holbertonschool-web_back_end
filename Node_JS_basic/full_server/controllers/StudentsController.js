@@ -1,3 +1,4 @@
+
 const readDatabase = require("../utils");
 
 // refer to database
@@ -28,9 +29,9 @@ export default class StudentsController {
       const { CS, SWE } = students;
 
       if (req.params.major === 'CS') {
-        res.status(200).send(`List: ${CS.join(', ')}\n`);
+        res.status(200).send(`List: ${CS.join(', ')}`);
       } else if (req.params.major === 'SWE') {
-        res.status(200).send(`List: ${SWE.join(', ')}\n`);
+        res.status(200).send(`List: ${SWE.join(', ')}`);
       } else {
         res.status(400).end('Major parameter must be CS or SWE');
       }
