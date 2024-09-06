@@ -1,4 +1,3 @@
-const express = require('express');
 const fs = require('node:fs/promises');
 
 async function readDatabase(path) {
@@ -20,6 +19,10 @@ async function readDatabase(path) {
         studentsSWE.push(columns[0]);
       }
     }
+    return {
+      CS: studentsCS,
+      SWE: studentsSWE
+    };
   } catch (err) {
     throw new Error('Cannot load the database');
   }
