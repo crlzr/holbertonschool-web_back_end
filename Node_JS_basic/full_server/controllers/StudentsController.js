@@ -33,7 +33,7 @@ export default class StudentsController {
       } else if (req.params.major === 'SWE') {
         res.status(200).send(`List: ${SWE.join(', ')}`);
       } else {
-        res.status(400).end('Major parameter must be CS or SWE');
+        res.status(500).end('Major parameter must be CS or SWE');
       }
     } catch (err) {
       res.status(500).end('Cannot load the database');
