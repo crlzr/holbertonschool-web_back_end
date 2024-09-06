@@ -1,8 +1,8 @@
 const fs = require('node:fs/promises');
 
-async function readDatabase() {
+async function readDatabase(filePath) {
   try {
-    const data = await fs.readFile('./database.csv', 'utf8');
+    const data = await fs.readFile(filePath, 'utf8');
     const rows = data.split('\n').slice(1);
 
     const studentsCS = [];

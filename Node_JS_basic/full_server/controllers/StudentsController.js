@@ -2,7 +2,7 @@
 const readDatabase = require("../utils");
 
 // refer to database
-const database = process.argv[2];
+const database = process.argv[process.argv.length -1];
 
 export default class StudentsController {
   static async getAllStudents(req, res) {
